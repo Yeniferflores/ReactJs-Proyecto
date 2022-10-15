@@ -19,11 +19,10 @@ function App() {
           <Route path="/producto/:id" 
             element= 
           { <ItemDetailContainer/>} />
-          <Route path="*" element={ <h1>No encontramos nada: Error:404</h1> }/>
+          <Route path="*" element={ <h1>No se encontro nada: Error:404</h1> }/>
         </Routes>
     </BrowserRouter>
     </div>
-    
   );
 }
 

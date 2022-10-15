@@ -17,7 +17,7 @@ function ItemDetail ({producto}) {
                     <h5 className= "title-card">{producto.title}</h5>
                     <p>{producto.detail}</p>
                     <h6 price-card>$ {producto.price}</h6>
-                    <h6>Stock: {producto.stock}</h6>
+                    <h6>Stock disponible: {producto.stock}</h6>
                 </div>
                 <ItemCount stock={producto.stock} initial={1} text="Agregar al carrito" />
             </FlexWrapper>
