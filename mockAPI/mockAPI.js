@@ -7,6 +7,7 @@ const data= [
         detail: "Fabricado con materiales de primera calidad y funcional",
         stock: 5,
         color: "Black",
+        category: "hombre"
     },
     {
         id: 2, 
@@ -16,6 +17,7 @@ const data= [
         detail: "Fabricado con materiales de primera calidad y funcional",
         stock:8,
         color: "Black",
+        category: "mujer"
     },
     {
         id: 3,
@@ -25,6 +27,7 @@ const data= [
         detail:"Fabricado con materiales de primera calidad y funcional",
         stock: 2,
         color: "Black",
+        category: "mujer"
     },
     {
         id: 4,
@@ -34,6 +37,7 @@ const data= [
         detail: "Innovadores pantalones impermeables techwear con estilo futurista y táctico",
         stock: 6,
         color: "Black",
+        category: "hombre"
     }
 
 ]
@@ -46,10 +50,19 @@ export default function getPorduct() {
 
 export function getOneProduct(id) {
     return new Promise((resolve, reject) => {
-        let productReq = data.find ((prod) => {
-            return prod.id === Number(id);
+        let productReq = data.find ((item) => {
+            return item.id === Number(id);
         });
         setTimeout(() => resolve(productReq), 1000);
 });
 }
 
+
+export function getProductByCategory(category) {
+    return new Promise((resolve) => {
+      let arrayFilterPorducts = data.filter(
+        (item) => item.category === category
+      );
+      setTimeout(() => resolve(arrayFilterPorducts), 1000);
+    });
+  }

@@ -13,12 +13,20 @@ function App() {
     <BrowserRouter>
       <NavBar/>
         <Routes>
+          
           <Route path="/" 
           element= { 
           <ItemListContainer greeting= "Bienvenidos a mi E-Commerce"/>} />
-          <Route path="/producto/:id" 
+
+          <Route path="/category/:categoryID" 
+          element= {<ItemListContainer />}/>
+
+          <Route path="/producto/:ItemID" 
             element= 
           { <ItemDetailContainer/>} />
+
+          
+
           <Route path="*" element={ <h1>No se encontro nada: Error:404</h1> }/>
         </Routes>
     </BrowserRouter>
